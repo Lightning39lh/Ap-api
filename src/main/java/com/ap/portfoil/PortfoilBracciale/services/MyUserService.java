@@ -37,7 +37,7 @@ public class MyUserService {
         //HASH PASSWORD
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         System.out.println("nada");
-        //RETORNO EL USR
+        //RETORNO EL USER
         uR.save(user);
         return user;
     }
@@ -45,12 +45,6 @@ public class MyUserService {
     public Optional<MyUser> getUserByID(Long id) {
         return uR.findById(id);
     }
-    /*
-    //GET BY USER
-    public Optional<MyUser> findByUserName(String userName) {
-        return uR.findByUsername(userName);
-    }
-    */
 
 
     public Long findByUsername(String username)

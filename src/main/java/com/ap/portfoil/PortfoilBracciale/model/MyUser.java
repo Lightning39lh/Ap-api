@@ -18,10 +18,12 @@ public class MyUser {
     @Column(unique=true)
     private String username;  
     private String password; 
-    private String password2;
-    
+
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
+    
+    
+
 
 }

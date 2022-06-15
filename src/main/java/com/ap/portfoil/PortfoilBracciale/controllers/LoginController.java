@@ -35,12 +35,9 @@ public class LoginController {
     @PostMapping
     public ResponseEntity<AuthToken> register(@RequestBody MyUser loginUser) throws AuthenticationException {
 
-        System.out.println("entra?");
-        if (authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword())) !=null){
-            System.out.println("entro");
-        } else if (authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword2())) !=null){
-            System.out.println("siguio");
-        }
+        authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginUser.getUsername(), loginUser.getPassword()));
+       
+        
         
         final UserDetails user = us.loadUserByUsername(loginUser.getUsername());
         final String token = jwtTokenUtil.generateToken(user);
