@@ -51,7 +51,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                                         "/v2/api-docs/**",
                                         "/swagger-ui/**",
                                         "/swagger-resources/**",
-                                        "/configuration/**" 
+                                        "/configuration/**",
+                                        "/education/get/*",
+                                        "/experience/get/*",
+                                        "/persons/get/*",
+                                        "/projects/get/*",
+                                        "/skills/get/*",
+                                        "/MyUsers/get/*"
             ).permitAll()            
             .anyRequest()
             .authenticated()

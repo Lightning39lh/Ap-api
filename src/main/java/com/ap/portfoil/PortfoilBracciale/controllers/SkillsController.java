@@ -22,7 +22,7 @@ public class SkillsController {
     @Autowired
     SkillsService sS;
     
-    @GetMapping("/{userId}")
+    @GetMapping("/get/{userId}")
     public ResponseEntity<ArrayList<Skill>> findAllByUserId(@PathVariable("userId") Long userId){
         ArrayList<Skill> skills = sS.findAllByUserId(userId);
         if(skills!=null){

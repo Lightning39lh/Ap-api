@@ -23,7 +23,7 @@ public class EducationController {
      @Autowired
     EducationService eS;
     
-    @GetMapping("/{userId}")
+    @GetMapping("/get/{userId}")
     public ResponseEntity<ArrayList<Education>> findAllByUserId(@PathVariable("userId") Long userId){
         ArrayList<Education> educations = eS.findAllByUserId(userId);
         if(educations!=null){

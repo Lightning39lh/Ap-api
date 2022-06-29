@@ -23,12 +23,12 @@ public class UserController {
     @Autowired
     private MyUserService uS;
     
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity<ArrayList<MyUser>> getAllUsers(){
         return ResponseEntity.status(HttpStatus.OK).body(uS.getAllUsers());
     }
 
-    @GetMapping("/{username}")
+    @GetMapping("/get/{username}")
     public ResponseEntity<Long> findIdByUserName(@PathVariable("username") String username){
         Long id = uS.findByUsername(username);
         if(id!=null){

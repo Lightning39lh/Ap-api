@@ -20,7 +20,7 @@ public class ExperienceController {
      @Autowired
     ExperienceService eS;
     
-    @GetMapping("/{userId}")
+    @GetMapping("/get/{userId}")
     public ResponseEntity<ArrayList<Experience>> findAllByUserId(@PathVariable("userId") Long userId){
         ArrayList<Experience> experience = eS.findAllByUserId(userId);
         if(experience!=null){
