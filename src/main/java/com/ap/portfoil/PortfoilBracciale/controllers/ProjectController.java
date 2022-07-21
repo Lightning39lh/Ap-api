@@ -44,7 +44,6 @@ public class ProjectController {
     
     @PostMapping("/create/{userId}")
     public ResponseEntity<Project> createProject(@RequestBody Project project, @PathVariable("userId") Long userId) {
-        System.out.println(project);
         pS.saveProject(project, userId);
         if(project!=null){
             return ResponseEntity.status(HttpStatus.OK).body(project);
@@ -54,7 +53,6 @@ public class ProjectController {
     }
     @PostMapping("/edit/{userId}")
     public ResponseEntity<Project> editProject(@RequestBody Project project, @PathVariable("userId") Long userId) {
-        System.out.println(project);
         pS.editProject(project, userId);
         if(project!=null){
             return ResponseEntity.status(HttpStatus.OK).body(project);

@@ -34,9 +34,9 @@ public class PersonController {
         }
     }
     
-    @PostMapping("/create")
-    public ResponseEntity<Person> createPersona(@RequestBody Person person) {
-        pS.savePerson(person);
+    @PostMapping("/create/{id}")
+    public ResponseEntity<Person> createPersona(@RequestBody Person person,@PathVariable Long UserId) {
+        pS.savePerson(person,UserId);
         if(person!=null){
             return ResponseEntity.status(HttpStatus.OK).body(person);
         }else{
@@ -46,17 +46,16 @@ public class PersonController {
     }
     
     @PutMapping("/edit/{id}") 
-    public ResponseEntity<Person> editPerson (@PathVariable Long id, @RequestBody Person person)
-     { person.setId(id);
-        pS.savePerson(person);
+    public ResponseEntity<Person> editPerson (@PathVariable Long UserId, @RequestBody Person person)
+     { 
+        pS.editPerson(person,UserId);
         if(person!=null){
             return ResponseEntity.status(HttpStatus.OK).body(person);
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
-    
-    
+    /*
     @DeleteMapping("/{id}")
     public ResponseEntity removePerson(@PathVariable("id") Long id){
         if (pS.removePerson(id)){ 
@@ -64,6 +63,6 @@ public class PersonController {
         } else {
             return ResponseEntity.notFound().build();
             }
-    }
+    }*/
     
 }

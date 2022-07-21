@@ -27,7 +27,9 @@ public class Person {
     private String fullName;
     private String degree;
     private String img;
+    private String banner;
     private String aboutMe;
+    
     @ManyToOne
     @JoinColumn(name = "My_User_Id")
     private MyUser my_user;

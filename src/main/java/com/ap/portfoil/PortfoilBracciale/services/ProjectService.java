@@ -30,7 +30,6 @@ public class ProjectService {
 
     public void saveProject(Project project,Long userId) {
         project.setMy_user(uR.findById(userId).get());
-        System.out.println(project);
         
         pR.save(project);
     }
