@@ -15,4 +15,13 @@ public class SkillsService {
     public ArrayList<Skill> findAllByUserId(Long userId) {
         return sR.getProjectsById(userId);
     }
+    
+    public boolean removeSkills(Long id) {
+        try {
+            sR.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

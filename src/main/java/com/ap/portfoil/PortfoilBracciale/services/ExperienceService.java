@@ -16,4 +16,13 @@ public class ExperienceService {
     public ArrayList<Experience> findAllByUserId(Long userId) {
         return eR.getProjectsById(userId);
     }
+    
+    public boolean removeExperience(Long id) {
+        try {
+            eR.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

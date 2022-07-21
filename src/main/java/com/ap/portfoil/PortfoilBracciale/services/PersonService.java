@@ -15,4 +15,23 @@ public class PersonService {
     public Person findAllByUserId(Long userId) {
         return pR.getPersonById(userId);
     }
+    
+    public void savePerson(Person person) {
+        pR.save(person);
+    }
+      
+    
+    
+    
+    public boolean removePerson(Long id) {
+        try {
+            pR.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+   
+    
 }

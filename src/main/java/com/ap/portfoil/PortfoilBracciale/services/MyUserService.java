@@ -69,6 +69,7 @@ public class MyUserService {
             return false;
         }
     }
+    
     //EDIT
     public boolean editByUserName(MyUser user) {
         if (uR.findById(user.getId()) != null){

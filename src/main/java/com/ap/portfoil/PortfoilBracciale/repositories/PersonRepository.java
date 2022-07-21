@@ -5,6 +5,7 @@
 package com.ap.portfoil.PortfoilBracciale.repositories;
 
 import com.ap.portfoil.PortfoilBracciale.model.Person;
+import java.util.ArrayList;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,5 +17,4 @@ public interface PersonRepository extends JpaRepository<Person,Long>{
     @Query(value = "SELECT * FROM person  WHERE person.my_user_id = ?1", nativeQuery = true)
     public Person getPersonById(@Param ("1") Long my_user_id);
 
-    
 }

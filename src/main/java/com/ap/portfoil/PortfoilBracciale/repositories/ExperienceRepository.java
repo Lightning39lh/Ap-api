@@ -16,4 +16,5 @@ public interface ExperienceRepository extends JpaRepository<Experience,Long>{
     
     @Query(value = "SELECT * FROM experience  WHERE experience.my_user_id = ?1", nativeQuery = true)
     public ArrayList<Experience> getProjectsById(@Param ("1") Long my_user_id);
+    
 }

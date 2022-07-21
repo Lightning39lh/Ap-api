@@ -1,6 +1,7 @@
 package com.ap.portfoil.PortfoilBracciale.repositories;
 
 import com.ap.portfoil.PortfoilBracciale.model.MyUser;
+import java.util.ArrayList;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -15,4 +16,5 @@ public interface UserRepository extends JpaRepository<MyUser,String> {
     public String getRole(@Param("username") String username);
 
     public MyUser findByUsername(String username);
+    
 }

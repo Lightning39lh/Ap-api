@@ -16,4 +16,5 @@ import org.springframework.stereotype.Repository;
 public interface SkillsRepository extends JpaRepository<Skill,Long>{
      @Query(value = "SELECT * FROM skill  WHERE skill.my_user_id = ?1", nativeQuery = true)
     public ArrayList<Skill> getProjectsById(@Param ("1") Long my_user_id);
+    
 }

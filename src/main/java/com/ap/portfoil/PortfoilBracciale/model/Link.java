@@ -16,15 +16,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name= "project")
-public class Project {
-    @Id
+@Table(name= "link")
+public class Link {
+     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String description;
-    private String link;
+    private String linkedin;
+    private String github;
     @ManyToOne
-    @JoinColumn(name = "my_user_id")
+    @JoinColumn(name = "My_User_Id")
     private MyUser my_user;
 }

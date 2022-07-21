@@ -20,4 +20,13 @@ public class EducationService {
         return eR.getProjectsById(userId);
     }
     
+    public boolean removeEducation(Long id) {
+        try {
+            eR.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+    
 }

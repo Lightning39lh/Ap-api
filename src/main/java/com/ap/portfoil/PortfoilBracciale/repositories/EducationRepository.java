@@ -16,4 +16,5 @@ public interface EducationRepository extends JpaRepository<Education,Long>{
     
     @Query(value = "SELECT * FROM education  WHERE education.my_user_id = ?1", nativeQuery = true)
     public ArrayList<Education> getProjectsById(@Param ("1") Long my_user_id);
+    
 }
