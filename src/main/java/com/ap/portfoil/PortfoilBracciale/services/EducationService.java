@@ -6,6 +6,7 @@ package com.ap.portfoil.PortfoilBracciale.services;
 
 import com.ap.portfoil.PortfoilBracciale.model.Education;
 import com.ap.portfoil.PortfoilBracciale.repositories.EducationRepository;
+import com.ap.portfoil.PortfoilBracciale.repositories.MyUserRepository;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class EducationService {
     @Autowired
     EducationRepository eR;
 
+    @Autowired
+    MyUserRepository uR;
+    
     public ArrayList<Education> findAllByUserId(Long userId) {
         return eR.getProjectsById(userId);
     }
@@ -29,4 +33,14 @@ public class EducationService {
         }
     }
     
+    public void saveEducation(Education education,Long userId) {
+        education.setMy_user(uR.findById(userId).get());
+        
+        eR.save(education);
+    }
+
+    public void editEducation(Education education,Long userId) {
+        education.setMy_user(uR.findById(userId).get());
+        eR.save(education);
+    }
 }

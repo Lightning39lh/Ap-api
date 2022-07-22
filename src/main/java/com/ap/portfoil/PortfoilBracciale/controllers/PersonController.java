@@ -45,8 +45,8 @@ public class PersonController {
         
     }
     
-    @PutMapping("/edit/{id}") 
-    public ResponseEntity<Person> editPerson (@PathVariable Long UserId, @RequestBody Person person)
+    @PostMapping("/edit/{id}") 
+    public ResponseEntity<Person> editPerson (@PathVariable("id") Long UserId, @RequestBody Person person)
      { 
         pS.editPerson(person,UserId);
         if(person!=null){

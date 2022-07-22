@@ -14,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -39,5 +41,23 @@ public class SkillsController {
         } else {
             return ResponseEntity.notFound().build();
             }
+    }
+    @PostMapping("/create/{userId}")
+    public ResponseEntity<Skill> createProject(@RequestBody Skill skill, @PathVariable("userId") Long userId) {
+        sS.saveSkill(skill, userId);
+        if(skill!=null){
+            return ResponseEntity.status(HttpStatus.OK).body(skill);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+    }
+    @PostMapping("/edit/{userId}")
+    public ResponseEntity<Skill> editProject(@RequestBody Skill skill, @PathVariable("userId") Long userId) {
+        sS.editSkill(skill, userId);
+        if(skill!=null){
+            return ResponseEntity.status(HttpStatus.OK).body(skill);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
     }
 }

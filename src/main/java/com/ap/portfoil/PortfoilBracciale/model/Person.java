@@ -26,11 +26,12 @@ public class Person {
     private Long id;
     private String fullName;
     private String degree;
+    
     private String img;
     private String banner;
     private String aboutMe;
     
     @ManyToOne
-    @JoinColumn(name = "My_User_Id")
+    @JoinColumn(name = "my_user_id")
     private MyUser my_user;
 }
