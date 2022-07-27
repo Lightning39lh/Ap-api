@@ -57,7 +57,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                                         "/persons/get/*",
                                         "/projects/get/*",
                                         "/skills/get/*",
-                                        "/MyUsers/get/*",
+                                        "/MyUsers/**",
                                         "/links/get/*"
             ).permitAll()            
             .anyRequest()

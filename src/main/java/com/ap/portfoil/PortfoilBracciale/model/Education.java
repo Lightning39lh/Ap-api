@@ -25,6 +25,7 @@ public class Education {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private String place;
     private String description;
     @ManyToOne
     @JoinColumn(name = "My_User_Id")
