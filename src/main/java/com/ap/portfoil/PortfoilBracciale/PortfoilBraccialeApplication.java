@@ -13,11 +13,5 @@ public class PortfoilBraccialeApplication {
 		SpringApplication.run(PortfoilBraccialeApplication.class, args);
 	}
         
-        @Configuration
-        public class WebConfiguration implements WebMvcConfigurer {
-                    @Override
-                    public void addCorsMappings(CorsRegistry registry){
-            registry.addMapping("/**").allowedMethods("GET","PUT","POST","DELETE");
-        }
-                }
+       
 }
