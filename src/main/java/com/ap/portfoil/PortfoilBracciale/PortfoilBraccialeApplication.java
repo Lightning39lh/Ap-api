@@ -20,5 +20,4 @@ public class PortfoilBraccialeApplication {
             registry.addMapping("/**").allowedMethods("GET","PUT","POST","DELETE");
         }
                 }
-
 }
