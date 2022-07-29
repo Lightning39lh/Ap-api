@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/links")
-@CrossOrigin("*")
+@CrossOrigin(origins="*")
 public class LinkController {
     @Autowired
     LinkService lS;
